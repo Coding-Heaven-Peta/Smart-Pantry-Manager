@@ -9,29 +9,14 @@ import za.co.richfield.smartpantry.model.Recipe;
 import za.co.richfield.smartpantry.model.RecipeIngredient;
 import za.co.richfield.smartpantry.util.DateUtils;
 
-/**
- * Static seed data for the app.
- *
- * <p>The recipe collection is written on first run (see DatabaseHelper.onCreate) so the
- * user always has recipes to match against. The pantry itself is NOT seeded, because the
- * empty-pantry state is part of the required behaviour; instead the Settings screen offers
- * a "Load demo pantry" button that a demonstrator can use to populate a realistic pantry.</p>
- */
+
 public final class DatabaseSeeder {
 
     private DatabaseSeeder() {
         // Utility class: no instances.
     }
 
-    // ---------------------------------------------------------------------
-    // Pantry demo data
-    // ---------------------------------------------------------------------
-
-    /**
-     * A realistic pantry that shows every behaviour of the app:
-     * 8 recipes can be cooked, several are "almost there", and a few items
-     * are close to their expiry date.
-     */
+// Pantry Demo Data
     public static List<PantryItem> buildDemoPantry() {
         List<PantryItem> items = new ArrayList<>();
         items.add(new PantryItem("Egg", 6, "piece", DateUtils.isoDaysFromToday(12)));
@@ -51,9 +36,7 @@ public final class DatabaseSeeder {
         return items;
     }
 
-    // ---------------------------------------------------------------------
-    // Recipe collection (20 recipes)
-    // ---------------------------------------------------------------------
+// Recipe Collection
 
     public static List<Recipe> buildSeedRecipes() {
         List<Recipe> recipes = new ArrayList<>();
@@ -246,9 +229,7 @@ public final class DatabaseSeeder {
         return recipes;
     }
 
-    // ---------------------------------------------------------------------
-    // Small builders to keep the recipe data readable
-    // ---------------------------------------------------------------------
+ // Keep recipe data readable
 
     private static Recipe recipe(String name, String description, int servings,
                                  String steps, RecipeIngredient... ingredients) {
