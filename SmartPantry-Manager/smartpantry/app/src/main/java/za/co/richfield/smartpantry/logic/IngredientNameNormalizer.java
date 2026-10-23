@@ -62,8 +62,7 @@ public final class IngredientNameNormalizer {
                 continue;
             }
             String singular = singularize(token);
-            // Check the synonym list against both the original and singular form,
-            // so "mielies" and "mielie" both map to "corn".
+            // Check the synonym list against both the original and singular form
             String synonym = SYNONYMS.get(token);
             if (synonym == null) {
                 synonym = SYNONYMS.get(singular);
